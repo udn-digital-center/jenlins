@@ -14,6 +14,7 @@ pipeline {
  	stage('Deploy'){
             steps {
                 echo "Code Deployed."
+                build job:"deploy-to-stage"
             }
         }
     }
