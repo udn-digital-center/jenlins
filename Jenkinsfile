@@ -27,7 +27,7 @@ pipeline {
                 sshagent (credentials: ['connetc_to_gcp_jenkins_demo_server']) {
                     sh 'ssh jenkins@34.72.86.38'
                     sh 'ls -l'
-                   sh 'scp -r /var/jenkins_home/workspace/pipline-demo jenkins@34.72.86.38:/var/www/html' 
+                   sh 'scp -o StrictHostKeyChecking=no -r /var/jenkins_home/workspace/pipline-demo jenkins@34.72.86.38:/var/www/html' 
                 }
             }
         }
