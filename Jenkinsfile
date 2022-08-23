@@ -19,6 +19,9 @@ pipeline {
  	stage('Deploy'){
             steps {
                 echo "Code Deployed."
+                sshagent (credentials: ['connetc_to_gcp_jenkins_demo_server']) {
+                   sh 'ssh jenkins@34.72.86.38'
+                }
             }
         }
     }
