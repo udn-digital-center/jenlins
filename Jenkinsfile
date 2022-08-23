@@ -23,7 +23,7 @@ pipeline {
         }
  	stage('Deploy'){
             steps {
-                echo "Code Deploye
+                echo "Code Deploye"
                 sshagent (credentials: ['connetc_to_gcp_jenkins_demo_server']) {
                     sh 'ssh -o StrictHostKeyChecking=no jenkins@34.72.86.38'
                     sh 'ls -l'
