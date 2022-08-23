@@ -15,7 +15,9 @@ pipeline {
             steps {
                 echo "Building......"
                 sh "ls -l"
-                sh "chmod +x  indes.html" //changing permissions
+                sh "chmod +x  index.html" //changing permissions
+                sh "chmod +x  style.css" //changing permissions
+                sh "chmod +x  Jenkinsfile" //changing permissions
                 sh "ls -l"
             }
         }
