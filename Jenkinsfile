@@ -28,7 +28,7 @@ pipeline {
                     sh 'ssh -o StrictHostKeyChecking=no jenkins@34.72.86.38'
                     sh 'ls -l'
 //                    sh 'scp -o StrictHostKeyChecking=no -r /var/jenkins_home/workspace/pipline-demo jenkins@34.72.86.38:/var/www/html' 
-                    sh 'cp /var/jenkins_home/workspace/pipline-demo/. /var/jenkins_home/workspace/test'
+                    sh 'cp /var/jenkins_home/workspace/pipline-demo /var/jenkins_home/workspace/test'
                 }
             }
         }
