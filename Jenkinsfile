@@ -23,11 +23,12 @@ pipeline {
         }
  	stage('Deploy'){
             steps {
-                echo "Code Deployed."
+                echo "Code Deploye
                 sshagent (credentials: ['connetc_to_gcp_jenkins_demo_server']) {
                     sh 'ssh -o StrictHostKeyChecking=no jenkins@34.72.86.38'
                     sh 'ls -l'
-                    sh 'scp -o StrictHostKeyChecking=no -r /var/jenkins_home/workspace/pipline-demo jenkins@34.72.86.38:/tmp' 
+                    //遠端機器的/var/www/html權限在ROOT下，所以要把jenkins的身分放進去root的GROUP
+                    sh 'scp -o StrictHostKeyChecking=no -r /var/jenkins_home/workspace/pipline-demo jenkins@34.72.86.38:/var/www/html' 
                     //sh 'cp -R /var/jenkins_home/workspace/pipline-demo /var/jenkins_home/workspace/test'
                 }
             }
