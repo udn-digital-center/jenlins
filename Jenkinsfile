@@ -29,7 +29,7 @@ pipeline {
                     sh 'ls -l'
                     //遠端機器的/var/www/html權限在ROOT下，所以要把jenkins的身分放進去root的GROUP
                     //sh 'scp -r /var/jenkins_home/workspace/pipline-demo jenkins@34.72.86.38:/var/www/html' 
-                    sh 'rsync --exclude ".git" -avzhiun /var/jenkins_home/workspace/pipline-demo jenkins@34.72.86.38:/var/www/html'
+                    sh 'rsync --exclude ".git" -avzhin /var/jenkins_home/workspace/pipline-demo jenkins@34.72.86.38:/var/www/html'
                 }
             }
         }
